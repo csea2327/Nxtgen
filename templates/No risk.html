@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/a32b9bd18e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='No risk.css') }}">
+</head>
+
+<body>
+    <div class="risk-container">
+        <div class="row">
+            <div class="user-card">
+                <h3>User Details</h3>
+                <p><strong>Name:</strong>{{name}}</p>
+                <p><strong>Age:</strong> {{age}}</p>
+                <p><strong>Gender:</strong> {{gen}}</p>
+            </div>
+            <div class="risk-meter">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728146911/norisk-MadewithClipchamp-ezgif.com-video-to-gif-converter_vyq1tl.gif" alt="Risk Meter GIF">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="message-card">
+                <h3>No Risk Detected!</h3>
+                <p>You are in excellent health condition! Keep maintaining a healthy lifestyle.</p>
+            </div>
+            <div class="tips-card">
+                <h3>Health Tips</h3>
+                <ul>
+                    <li>Eat a balanced diet.</li>
+                    <li>Exercise regularly.</li>
+                    <li>Get at least 7-8 hours of sleep.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="download-card">
+                <i class="fas fa-download download-icon"></i>
+                <h3>Download Your Report Here</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

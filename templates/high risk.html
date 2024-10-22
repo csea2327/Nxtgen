@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/a32b9bd18e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='high risk.css') }}">
+</head>
+
+<body>
+    <div class="risk-container">
+        <div class="row">
+            <div class="user-card">
+                <h3>User Details</h3>
+                <p><strong>Name:</strong>{{name}}</p>
+                <p><strong>Age:</strong> {{age}}</p>
+                <p><strong>Gender:</strong> {{gen}}</p>
+            </div>
+            <div class="risk-meter">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728147335/Untitledvideo-MadewithClipchamp2-ezgif.com-video-to-gif-converter_cgc6ld.gif" alt="Risk Meter GIF">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="message-card">
+                <h3>High Risk</h3>
+                <p>Your health indicates high-risk factors. Please consult a specialist immediately.</p>
+            </div>
+            <div class="tips-card">
+                <h3>Urgent Tips</h3>
+                <ul>
+                    <li>Consult a specialist as soon as possible.</li>
+                    <li>Monitor your health metrics daily.</li>
+                    <li>Follow a heart-healthy diet and reduce stress.</li>
+                    <li>Adopt relaxation techniques and avoid strenuous activity.</li>
+                    <li>Strictly adhere to prescribed medication.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hospital-row">
+            <div class="hospital-card">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728141175/WhatsApp_Image_2024-10-05_at_20.39.34_ba770c55_nwuiso.jpg" alt="Hospital 1">
+                <h4>Apollo Specialty Hospitals</h4>
+                <a href="https://www.google.com/maps?client=ms-android-vivo-rev1&cs=1&hl=en-US&sca_esv=6449538529ffda2f&kgmid=/g/1tcvghwl&shndl=30&kgs=9fa600e50de28541&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KamqbINL80w6MXtvQPh48433&daddr=16/111,+1133,+Muthukur+Rd,+Pinakini+Avenue,+Ramji+Nagar,+Nellore,+Andhra+Pradesh+524004" target="_blank">Visit Here</a>
+            </div>
+            <div class="hospital-card">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728141176/WhatsApp_Image_2024-10-05_at_20.39.35_56098774_fcez01.jpg" alt="Hospital 2">
+                <h4>Medicover Hospitals</h4>
+                <a href="https://www.google.com/maps/dir//NH-5,+Chinthareddypalem+Cross+road,+Alahari+Nagar,+Chintareddy+Palem,+Nellore,+Andhra+Pradesh+524002/@14.4366907,79.9169303,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3a4cf2e5067a0f8b:0x7f6e3f5235b98d31!2m2!1d79.9993321!2d14.436705?hl=en-US&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D" target="_blank">Visit Here</a>
+            </div>
+            <div class="hospital-card">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728141175/WhatsApp_Image_2024-10-05_at_20.39.35_d48d188a_azwtlc.jpg" alt="Hospital 3">
+                <h4>Narayana Hospital</h4>
+                <a href="https://www.google.com/maps?sca_esv=6449538529ffda2f&hl=en-US&gl=in&kgmid=/g/11dxb0ldnm&shndl=30&kgs=2d23457fc34c4fd1&um=1&ie=UTF-8&fb=1&sa=X&geocode=KWFYyRnLjEw6Mcyj0zuQWUv6&daddr=C2G7%2B62G,+Chintareddy+Palem,+Nellore,+Andhra+Pradesh+524002" target="_blank">Visit Here</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="download-card">
+                <i class="fas fa-download download-icon"></i>
+                <a href="/download_pdf" style="color: rgb(0, 0, 0); text-decoration: none; font-weight: 400;">
+
+                <h3>Download Your Report Here</h3>
+            </a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

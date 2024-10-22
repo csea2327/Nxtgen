@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='NxtGenHealth.css') }}">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img.jpg') }}" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728020398/image_2024-10-04_105754280-removebg-preview_oqvgdt.png" class="NxtGenHealth-logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" id="navItem1" href="#CheckUpSection">
+                        CheckUp
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-link" href="#HealthTipsSection" id="navItem2">Health Tips</a>
+                    <a class="nav-link" href="#ExerciseSection" id="navItem4">Exercise</a>
+                    <a class="nav-link" href="#GadgetsSection" id="navItem3">Gadgets</a>
+                    <a class="nav-link" href="#HealthExpertSection" id="navItem4">Health Expert</a>
+                    <a class="nav-link" href="#PillIdentifierSection" id="navItem4">Pill identifier</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column" id="BannerSection">
+        <div class="text-center">
+            <h1 class="banner-heading mb-3">Real-Time Predictive Health Alerts</h1>
+            <p class="banner-caption mb-4">NxtGenHealth</p>
+            <button class="custom-button"><a href="#CheckUpSection" style="color: white";>CheckUp</a></button>
+            <button class="custom-outline-button"> <a href="#HealthTipsSection"  style="color: white">General Info</a></button>
+        </div>
+    </div>
+    <div id="CheckUpSection" class="checkup-outer-container">
+        <div class="checkup-container mt-5">
+            <h2 class="form-heading text-center mb-4">Health Checkup Form</h2>
+            <form class="health-form" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="firname">First name</label>
+                            <input type="text" class="form-control" id="age" placeholder="Enter First Name" name="first" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lasname">Last name</label>
+                            <input type="text" class="form-control" id="age" placeholder="Enter Last Name" name="last" required>
+                        </div>
+                    </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" placeholder="Enter age" name="age" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender" name="gen" required>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" class="form-control" id="height" placeholder="Enter height" name="height" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" class="form-control" id="weight" placeholder="Enter weight" name="weight" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="activity">Physical Activity</label>
+                            <select class="form-control" id="activity" name="phyact" required>
+                                <option>Low</option>
+                                <option>Moderate</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="diet">Dietary Habits</label>
+                            <select class="form-control" id="diet" name="diet" required>
+                                <option>Veg</option>
+                                <option>Non-Veg</option>
+                                <option>Balanced Diet</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="sleep">Sleep Pattern (Hours)</label>
+                            <input type="number" class="form-control" id="sleep" placeholder="Enter hours of sleep" name="sleep" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="stress">Stress Level - no. of working hours</label>
+                            <select class="form-control" id="stress" name="stress" required>
+                                <option>Low (4 hrs)</option>
+                                <option>Moderate (6 - 8 hrs)</option>
+                                <option>High (&gt;8 hrs)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="smoking">Smoking Habit</label>
+                            <select class="form-control" id="smoking" name="smoking" required>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="alcohol">Alcohol Consumption</label>
+                            <select class="form-control" id="alcohol" name="Alcon" required>
+                                <option>No</option>
+                                <option>Occasionally</option>
+                                <option>Regularly</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="surgery">Past Surgeries</label>
+                            <select class="form-control" id="surgery" name="PastSur" required>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="chronic">Chronic Condition</label>
+                            <select class="form-control" id="chronic" name="chronic" required>
+                                <option>No</option>
+                                <option>Diabetes</option>
+                                <option>Hypertension</option>
+                                <option>Asthma</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="glucose">Glucose Level</label>
+                            <input type="number" class="form-control" id="glucose" placeholder="70 mg/dl" name="glucose" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="heart-rate">Heart Rate</label>
+                            <input type="number" class="form-control" id="heart-rate" placeholder="78 bpm" name="heart-rate" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="allergy">Allergies</label>
+                            <select class="form-control" id="allergy" name="allergy" required>
+                                <option>No</option>
+                                <option>Food Allergies</option>
+                                <option>Pollen Allergies</option>
+                                <option>Pencillin Allergies</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="temperature">Temperature</label>
+                            <input type="text" class="form-control" id="temperature" placeholder="37°C"  name="temp" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="bp">BP</label>
+                            <input type="text" class="form-control" id="bp" placeholder="120/80 mm/hg" name="Bp" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bloodTest">Blood Test Parameters (Optional)</label>
+                    <input type="text" class="form-control" id="bloodTest" placeholder="Enter blood test details" name="bloodtest" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastBloodTest">Last Blood Test Date (Optional)</label>
+                    <input type="date" class="form-control" id="lastBloodTest" required>
+                </div>
+
+                <div class="text-center">
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                        <label class="form-check-label" for="termsCheck">I agree to the <a href="#" data-toggle="modal" data-target="#termsModal" style="color:#d0b200;">Terms and Conditions</a></label>
+                    </div>
+                    <div>
+                        <button type="submit" class="custom-button">Submit</button>
+                    </div>
+                    
+                </div>
+            </form>
+
+
+
+            <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title heading" id="termsModalLabel">Terms and Conditions</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="sub-heading">1. Introduction</h2>
+                            <p class="text ml-5">By using NxtGenHealth, you agree to these Terms. If you disagree, stop using the platform.</p>
+
+                            <h2 class="sub-heading">2. User Consent</h2>
+                            <ul class="list">
+                                <li>Provide accurate health info.</li>
+                                <li>Let us use your data (age, lifestyle, medical history) for health predictions.</li>
+                                <li>Optionally provide blood test data.</li>
+                            </ul>
+
+                            <h2 class="sub-heading">3. Data Privacy & Security</h2>
+                            <ul class="list">
+                                <li>Your data is protected per applicable privacy laws.</li>
+                                <li>We won’t share your info without consent.</li>
+                                <li>Data is used only for generating health insights.</li>
+                                <li>You can delete your account and data anytime.</li>
+                            </ul>
+
+                            <h2 class="sub-heading">4. Health Disclaimer</h2>
+                            <ul class="list">
+                                <li>NxtGenHealth provides predictions, not medical advice.</li>
+                                <li>Consult a healthcare provider for actual diagnoses or treatments.</li>
+                                <li>Accuracy of predictions depends on the data provided.</li>
+                            </ul>
+
+                            <h2 class="sub-heading">5. User Responsibilities</h2>
+                            <ul class="list">
+                                <li>Ensure your data is accurate.</li>
+                                <li>Do not misuse the platform or access others' data.</li>
+                            </ul>
+
+                            <h2 class="sub-heading">6. Limitation of Liability</h2>
+                            <p class="text ml-5">NxtGenHealth is a student project. We’re not liable for:</p>
+                            <ul class="list">
+                                <li>Prediction accuracy.</li>
+                                <li>Health decisions based on the platform’s advice.</li>
+                                <li>Security breaches or technical issues.</li>
+                            </ul>
+
+                            <h2 class="sub-heading">7. Changes to Terms</h2>
+                            <p class="text ml-5">We may update terms; continued use means acceptance.</p>
+
+                            <h2 class="sub-heading">8. Termination</h2>
+                            <p class="text ml-5">We can terminate access if terms are violated.</p>
+
+                            <h2 class="sub-heading">9. Contact</h2>
+                            <p class="text ml-5">For questions, email us at <a href="mailto:contact@nxtgenhealth.com" class="link">contact@nxtgenhealth.com</a>.</p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="HealthTipsSection">
+        <div class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="health-tips-section-heading pb-2">Health Tips</h1>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="shadow mb-3">
+                            <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728033520/WhatsApp_Image_2024-10-04_at_11.25.18_7676bb09_2_fssu6p.jpg" class="w-100" />
+                            <div class="p-3">
+                                <h1 class="health-tips-card-title">Heart and Stroke</h1>
+                                <p class="health-tips-card-description">
+                                    A healthy lifestyle, including a balanced diet and regular exercise, can prevent most
+                                    premature heart disease and strokes.
+                                </p>
+                                <a class="health-tips-card-link" href="https://www.heartandstroke.ca/healthy-living/healthy-eating/healthy-eating-basics" target="_blank">
+                                    READ MORE
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="shadow mb-3">
+                            <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728021443/WhatsApp_Image_2024-10-04_at_11.17.36_b498b646_rwxmpr.jpg" class="w-100" />
+                            <div class="p-3">
+                                <h1 class="health-tips-card-title">Eating well</h1>
+                                <p class="health-tips-card-description">
+                                    This diet plan combines fruits, vegetables, whole grains, lean protein, and healthy fats
+                                    for optimal nutrition and well-being.
+                                </p>
+                                <a class="health-tips-card-link" href="https://www.eatingwell.com/article/289245/7-day-heart-healthy-meal-plan-1200-calories/" target="_blank">
+                                    READ MORE
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="shadow mb-3">
+                            <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728033076/WhatsApp_Image_2024-10-04_at_14.22.50_7f9e222c_rdnex7.jpg" class="w-100" />
+                            <div class="p-3">
+                                <h1 class="health-tips-card-title">CDC</h1>
+                                <p class="health-tips-card-description">
+                                    Getting Enough water every day is important for health. Drinking water can prevent
+                                    dehydration and helps the body function normally.
+                                </p>
+                                <a class="health-tips-card-link" href="https://www.cdc.gov/healthy-weight-growth/water-healthy-drinks/index.html" target="_blank">
+                                    READ MORE
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-4">
+                        <div class="shadow mb-3">
+                            <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728035695/WhatsApp_Image_2024-10-04_at_14.51.51_3c3a6890_jvr5kl.jpg" class="w-100" />
+                            <div class="p-3">
+                                <h1 class="health-tips-card-title">Health Line</h1>
+                                <p class="health-tips-card-description">
+                                    Regular exercise improves physical and mental well-being. It helps to reduce stress,
+                                    boosts energy, and increases happiness.
+                                </p>
+                                <a class="health-tips-card-link" href="https://www.healthline.com/health/fitness-exercise/at-home-workouts#_noHeaderPrefixedContent" target="_blank">
+                                    READ MORE
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="shadow mb-3">
+                            <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728035699/WhatsApp_Image_2024-10-04_at_14.22.50_ea129f4e_w1iiyq.jpg" class="w-100" />
+                            <div class="p-3">
+                                <h1 class="health-tips-card-title">Health line</h1>
+                                <p class="health-tips-card-description">
+                                    Quality sleep is crucial for your health, as are regular exercise and a balanced diet. It supports clear thinking, stable mood, and overall well-being.
+                                </p>
+                                <a class="health-tips-card-link" href="https://www.healthline.com/nutrition/17-tips-to-sleep-better#melatonin" target="_blank">
+                                    READ MORE
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="shadow mb-3">
+                            <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728035696/WhatsApp_Image_2024-10-04_at_15.23.31_23202f8c_e7kvmk.jpg" class="w-100" />
+                            <div class="p-3">
+                                <h1 class="health-tips-card-title">Health line</h1>
+                                <p class="health-tips-card-description">
+                                    Alcohol can affect your health in many ways like feeling hangover. The more you drink, the more likely you notice other health effects.
+                                </p>
+                                <a class="health-tips-card-link" href="https://www.healthline.com/health/alcohol/how-to-stop-drinking#nurture-yourself" target="_blank">
+                                    READ MORE
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="ExerciseSection">
+        <h1 class="exercise-section-heading">Exercises</h1>
+        <p class="exercise-section-sub-heading">Weight lose</p>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="embed-responsive embed-responsive-16by9 mr-3 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kdpHMdFScm8?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9 mr-3 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-hSma-BRzoo?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/m756Gz8de4M?rel=0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <p class="exercise-section-sub-heading">Blood Pressure Control</p>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="embed-responsive embed-responsive-16by9 mr-3 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_KB18nR27F8?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9 mr-3 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xNKNrEdlys4?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fJG__lt5Bes?rel=0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <p class="exercise-section-sub-heading">Mental Health</p>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="embed-responsive embed-responsive-16by9 mr-3 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TGdNZTl86Qs?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9 mr-3 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i0K9r73abuc?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9 exercise-section-video-border">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tA8E4l8Dj34?rel=0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="explore-gadget-section pt-5 pb-5" id="GadgetsSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="gadget-section-heading">Explore Gadgets</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow gadget-card p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046123/WhatsApp_Image_2024-10-04_at_18.09.57_96ccd48e_yaenra.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Glucometer</h1>
+                        <a href="https://amzn.in/d/eFpycHt" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow gadget-card p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046124/WhatsApp_Image_2024-10-04_at_18.09.58_df5f98fb_wrd0tv.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Blood Pressure Monitor</h1>
+                        <a href="https://amzn.in/d/hdMWt3t" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="gadget-card shadow p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046124/WhatsApp_Image_2024-10-04_at_18.10.36_4040b6d3_bwaset.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Ear Thermometer</h1>
+                        <a href="https://amzn.in/d/7IW5UT3" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="gadget-card shadow p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046124/WhatsApp_Image_2024-10-04_at_18.10.39_1a7b70f1_guwiyq.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Pulse Oximeter</h1>
+                        <a href="https://amzn.in/d/efPrdAl" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="gadget-card shadow p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046124/WhatsApp_Image_2024-10-04_at_18.10.41_67c8ee68_wsofqj.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Single Lead ECG Device</h1>
+                        <a href="https://amzn.in/d/fwnEwMT" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="gadget-card shadow p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046126/WhatsApp_Image_2024-10-04_at_18.13.41_48542953_y5rgq7.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Samsung Galaxy Watch6</h1>
+                        <a href="https://amzn.in/d/6kg09ro" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="gadget-card shadow p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046124/WhatsApp_Image_2024-10-04_at_18.10.44_2e6d3efe_g9gk9m.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Full Body Massage</h1>
+                        <a href="https://amzn.in/d/bZKEHcw" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="gadget-card shadow p-3 mb-3">
+                        <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728046125/WhatsApp_Image_2024-10-04_at_18.10.47_cc3362b1_lvwfcd.jpg" class="gadget-image w-100" />
+                        <h1 class="gadget-card-title">Weight Scale</h1>
+                        <a href="https://amzn.in/d/22EnjTc" target="_blank" class="gadget-link">
+                            View Product
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Start-->
+<div id="HealthExpertSection">
+    <h1 class="expert-section-heading">Health Expert</h1>
+    <div class="horizontal-card-container">
+        <div class="horizontal-card">
+            <div class="card-left">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728156143/WhatsApp_Image_2024-10-06_at_00.49.16_85d8fb39_d68o4n.jpg" alt="Health Expert Photo" class="expert-photo">
+                <div class="expert-basic-info">
+                    <h2 class="expert-name">Dr D M Karthik</h2>
+                    <p class="expert-title">General Practitioner</p>
+                </div>
+            </div>
+            <div class="card-right">
+                <p class="expert-description">A General Practitioner in Chintareddypalem, Nellore and has an experience of 4 years in this field. Dr. D M Karthik practices at Narayana Medical College in Chintareddypalem, Nellore. He completed MBBS from Narayana Medical College, Nellore in 2019.</p>
+                <div class="card-details">
+                    <p><strong>Specialization:</strong> General Practitioner & Medical Officer of UHTC</p>
+                    <p><strong>Email:</strong> karthik@healthpro.com</p>
+                    <p class="mb-1"><strong>Social Links:</strong></p>
+                    <a href="https://youtube.com/@dr_karthik.alluring?si=6Q88Zap0i50HwlVr" target="_blank" class="social-link">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dr_karthik.dm?igsh=MTk2aDVsaXdiYnlidA==" target="_blank" class="social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-->
+
+
+    <div id="FeedbackSection" class="checkup-outer-container">
+        <div class="checkup-container mt-5">
+            <h2 class="form-heading text-center mb-4">Feedback Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="feedback">Feedback</label>
+                    <textarea name="/" class="form-control" id="feedback"  placeholder="Feedback"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="custom-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/a32b9bd18e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Low Risk.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img.jpg') }}" type="image/x-icon">
+
+    <title>Low Risk Page</title>
+</head>
+
+<body>
+    <div class="risk-container">
+        <div class="row">
+            <div class="user-card">
+                <h3>User Details</h3>
+                <p><strong>Name:</strong> {{name}}</p>
+                <p><strong>Age:</strong> {{age}}</p>
+                <p><strong>Gender:</strong> {{gen}}</p>
+            </div>
+            <div class="risk-meter">
+                <img src="https://res.cloudinary.com/dn9sdbv1o/image/upload/v1728147426/Untitledvideo-MadewithClipchamp-ezgif.com-video-to-gif-converter_bdnli7.gif" alt="Risk Meter GIF">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="message-card">
+                <h3>Low Risk</h3>
+                <p>Your health is generally good, but there's room for improvement.</p>
+            </div>
+            <div class="tips-card">
+                <h3>Health Tips</h3>
+                <ul>
+                    <li>Increase your physical activity.</li>
+                    <li>Reduce stress levels through mindfulness.</li>
+                    <li>Stay hydrated and maintain a balanced diet.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="download-card">
+                <i class="fas fa-download download-icon"></i>
+                <a href="/download_pdf" style="color: rgb(0, 0, 0); text-decoration: none; font-weight: 400;">
+                    <h3>Download Your Report Here</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
