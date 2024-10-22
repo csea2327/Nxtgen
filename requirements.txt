@@ -1,0 +1,10 @@
+numpy
+pandas
+django
+flask
+matplotlib
+seaborn
+scikit-learn
+xgboost
+pdfkit
+fpdf
