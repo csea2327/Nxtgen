@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.NxtGenHealth-logo {
+    width: 10rem;
+}
+
+.banner-section-bg-container {
+    background-image: url("https://res.cloudinary.com/dn9sdbv1o/image/upload/v1727362097/Screenshot_2024-09-26_201749_ezop42.png");
+    height: 100vh;
+    background-size: cover;
+}
+
+.banner-heading {
+    color: white;
+    font-family: "Roboto";
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.banner-caption {
+    color: #f5f7fa;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.custom-button {
+    color: white;
+    background-image: linear-gradient(#d0b200, #a58d00);
+    width: 130px;
+    height: 45px;
+    border-width: 0;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.custom-outline-button {
+    color: #d0b200;
+    background-color: transparent;
+    width: 130px;
+    height: 45px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d0b200;
+    border-radius: 8px;
+}
+
+.health-tips-section-heading {
+    color: #1f2933;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.health-tips-card-title {
+    color: #a58d00;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.health-tips-card-description {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.health-tips-card-link {
+    color: #d0b200;
+    font-family: "Roboto";
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.checkup-outer-container {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    padding: 2rem 0;
+}
+
+
+.checkup-container {
+    border-radius: 20px;
+    background-color: white;
+    padding: 30px;
+    width: 60%;
+    margin: auto;
+}
+
+.form-heading {
+    font-family: 'Roboto', sans-serif;
+    color: #183b56;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.health-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.health-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.form-check-label a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.form-check-label a:hover {
+    color: #0056b3;
+}
+
+.explore-gadget-section {
+    background-color: white;
+}
+
+.gadget-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.gadget-card-title {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.gadget-image {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.gadget-link {
+    color: #d0b200;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.gadget-card {
+    border-radius: 16px;
+}
+
+.horizontal-card-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.expert-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.horizontal-card-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.expert-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.horizontal-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    padding: 20px;
+    align-items: center;
+}
+
+.card-left {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.expert-photo {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 15px;
+}
+
+.expert-basic-info {
+    text-align: center;
+}
+
+.expert-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #d0b200;
+}
+
+.expert-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+}
+
+.card-right {
+    width: 62%;
+    flex-grow: 1;
+}
+
+.expert-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.card-details {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.social-link {
+    color: #d0b200;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#navItem1:hover {
+    text-decoration: none;
+}
+
+.exercise-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.exercise-section-sub-heading {
+    color: #d0b200;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.exercise-section-video-border {
+    border-radius: 15px;
+}
+
+.modal-dialog {
+    width: 50%;
+    max-width: 50%;
+    margin: auto;
+}
+
+.terms-and-conditions-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    color: #333;
+}
+
+.heading {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sub-heading {
+    font-size: 20px;
+    color: #d0b200;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.text,
+.list {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.list {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.link {
+    color: blue;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
